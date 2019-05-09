@@ -1,0 +1,53 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid">
+  <h1>Sample Form - TDF</h1>
+  <form #userForm="ngForm">
+
+    {{userForm.value | json}}
+    <hr/>
+    {{userData | json}}
+
+    <div calss="form-group">
+      <label>Name</label>    
+      <input type="text" name="name" class="form-control" [(ngModel)]=userData.name>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" class="form-control" [(ngModel)]=userData.email>
+    </div>
+
+    <div class="form-group">
+      <label>Telephone</label>
+      <input type="tel" name="telephone" class="form-control" [(ngModel)]=userData.telephone>
+    </div>
+
+    <div class="form-group">
+      <select name="topic" class="custom-select" [(ngModel)]=userData.topic>
+        <option value="">I am interested in</option>
+        <option *ngFor="let topic of topicArr">{{topic}}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label>Select your gender</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" value="Male" [(ngModel)]=userData.gender>
+        <label class="form-check-label">Male</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" value="Female" [(ngModel)]=userData.gender>
+        <label class="form-check-label">Female</label>
+      </div>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" name="tnc" [(ngModel)]=userData.tnc>
+      <label class="form-check-label">I agree</label>
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<router-outlet></router-outlet>

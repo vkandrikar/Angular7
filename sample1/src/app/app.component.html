@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome {{ title }}!
+  </h1>
+
+  <h2>Message from child: {{childMsg}}</h2>
+</div>
+
+<!-- 
+  mutiple types of defining sector and adding component 
+            typescript                  html
+  1. selector: '[app-page1]'  ==>  <div app-page1></div>
+  2. selector: 'app-page1'    ==>  <app-page1></app-page1>
+  3. selector: '.app-page1'   ==>  <div class="app-page1"></div>
+-->
+
+<!-- 
+<app-page1></app-page1> 
+<div class="app-page2" (childEvent)="childMsg=$event" [parentTitle]="title"> </div>
+-->
+
+<app-employee-list></app-employee-list>
+<app-employee-details></app-employee-details>
+<router-outlet></router-outlet>
